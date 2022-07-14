@@ -1,0 +1,20 @@
+@import url("App.css");
+@import url("Breeds.css");
+@import url("Modal.css");
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+.breedButton {
+  margin: 5px;
+  padding: 3px 5px;
+}
