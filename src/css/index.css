@@ -1,20 +1,29 @@
-@import url("App.css");
-@import url("Breeds.css");
 @import url("Modal.css");
+@import url("BreedImagePreview.css");
+@import url("Button.css");
 
 html,
 body {
   height: 100%;
   margin: 0;
 }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
+.app {
+  padding: 20px;
+}
 
-.breedButton {
-  margin: 5px;
-  padding: 3px 5px;
+.margin-10 {
+  margin: 10px;
+}
+
+.loader {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
 }

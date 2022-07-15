@@ -16,7 +16,7 @@ export default function ReactPortal({ children, wrapperId = "react-portal-wrappe
         }
         setWrapperElement(element);
         return () => {
-
+            console.log("000");
             if (systemCreated && element.parentNode) {
                 element.parentNode.removeChild(element);
             }

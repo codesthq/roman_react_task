@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import breedsApi from "../api/breeds";
+import { getAll } from "../api/breeds";
 import useApi from "../hooks/useApi";
 import { capitalizeFirstLetter } from "../utils/textUtils";
 
 export default function Breeds({ onClickBreed }) {
 
-    const getAllBreeds = useApi(breedsApi.getAll);
+    const getAllBreeds = useApi(getAll);
 
     useEffect(() => {
         getAllBreeds.request();
@@ -14,22 +14,39 @@ export default function Breeds({ onClickBreed }) {
     const allBreedsWithSubBreeds = (breeds) => {
         if (!breeds)
             return [];
-        //flat the array of breeds
-        return Object.entries(breeds.message).map((breedArray) => {
-            const breed = capitalizeFirstLetter(breedArray[0])
-            const subBreeds = breedArray[1].map(subBreed => `${capitalizeFirstLetter(subBreed)} ${breed}`)
-            return [breed].concat(subBreeds)
+
+        //flat an array of breeds
+        return Object.entries(breeds.message).map(([breed, subBreeds]) => {
+
+
+            //prepare sub-bread object sub-breed
+            subBreeds = subBreeds.map(subBreed => {
+                return {
+                    // need for buton label
+                    label: `${capitalizeFirstLetter(subBreed)} ${capitalizeFirstLetter(breed)}`,
+                    // need for api endpoint
+                    breed: breed,
+                    subBreed: subBreed
+                }
+            })
+
+            //return breed and sub-breed object
+            return [{
+                label: capitalizeFirstLetter(breed),
+                breed: breed,
+                subBreed: null
+            }].concat(subBreeds)
         }
         ).flat()
     }
 
     return (
         <div>
-            {getAllBreeds.loading && <p>Comments are loading!</p>}
+            {getAllBreeds.loading && <p>Breeds are loading!</p>}
             {getAllBreeds.error && <p>{getAllBreeds.error}</p>}
 
-            {allBreedsWithSubBreeds(getAllBreeds.data).map((bread) => (
-                <button onClick={() => onClickBreed(bread)} className="breedButton" key={bread}>{bread}</button>
+            {allBreedsWithSubBreeds(getAllBreeds.data).map((breadItem) => (
+                <a className="button button--gray button--effect  margin-10" onClick={() => onClickBreed(breadItem)} key={breadItem.label}><span>{breadItem.label}</span></a>
             ))}
 
         </div>

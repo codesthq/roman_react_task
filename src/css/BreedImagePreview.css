@@ -1,0 +1,35 @@
+.preview-conainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 0px 20px;
+}
+.preview-container__header {
+  text-align: center;
+}
+
+.preview-container__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.preview-container__image-breed {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 1px 1px 20px 7px rgb(0 0 0 / 21%);
+}
+
+.preview-container__actions {
+  padding: 20px;
+}
