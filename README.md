@@ -13,8 +13,8 @@ It is also possible to download another random photo of a breed by pressing the 
 The modal window can be closed by pressing the cross in the upper right corner or by pressing `ESC` on the keyboard.
 
 ## Solutions used
-`ReactPortal`.
-Hooks: `useCallback`, `useMemo`, `useEffect`, custom hook [`useApi`](https://github.com/rom-ero/react-dog-api/tree/master/src/hooks).
+[`ReactPortal`](https://pl.reactjs.org/docs/portals.html).
+Hooks: `useCallback`, `useMemo`, `useEffect`, custom hook [`useApi`](https://github.com/rom-ero/react-dog-api/blob/master/src/hooks/useApi.js).
 Libraries:  [uuid](https://www.npmjs.com/package/uuid), [axios](https://www.npmjs.com/package/axios), [CSSTransition](https://github.com/reactjs/react-transition-group)
 ## Available Scripts
 
