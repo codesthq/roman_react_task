@@ -14,7 +14,7 @@ The modal window can be closed by pressing the cross in the upper right corner o
 
 ## Solutions used
 `ReactPortal`.
-Hooks: `useCallback`, `useMemo`, `useEffect`, custom hook `useApi`.
+Hooks: `useCallback`, `useMemo`, `useEffect`, custom hook [`useApi`](https://github.com/rom-ero/react-dog-api/tree/master/src/hooks).
 Libraries:  [uuid](https://www.npmjs.com/package/uuid), [axios](https://www.npmjs.com/package/axios), [CSSTransition](https://github.com/reactjs/react-transition-group)
 ## Available Scripts
 
