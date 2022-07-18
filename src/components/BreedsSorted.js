@@ -10,6 +10,7 @@ export default function Breeds({ onClickBreed }) {
 
     useEffect(() => {
         getAllBreeds.request();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const allBreedsWithSubBreeds = (breeds) => {

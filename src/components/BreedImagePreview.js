@@ -13,10 +13,9 @@ export default function BreedImagePreview({ content: { label, breed, subBreed } 
     }
 
     useEffect(() => {
-        //Bug Init twice, happen when modal is use
         getImg(breed, subBreed)
-
-    }, [breed, subBreed]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <div className='preview-conainer'>
