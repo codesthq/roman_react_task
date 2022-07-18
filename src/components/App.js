@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import BreedImagePreview from './BreedImagePreview';
-import Breeds from "./Breeds";
+import BreedsSorted from "./BreedsSorted";
 import Modal from "./Modal";
 function App() {
 
@@ -8,18 +8,15 @@ function App() {
   const [currentBreed, setCurrentBreed] = useState({});
 
   const onClickBreed = (breed) => {
-    console.log("breed:", breed)
-
     setCurrentBreed(breed)
     setIsOpen(true)
   }
 
   return (
     <>
-
       <div className="app">
         <h1>Choose your favorite breed</h1>
-        <Breeds onClickBreed={onClickBreed} />
+        <BreedsSorted onClickBreed={onClickBreed} />
       </div>
 
       <Modal handleClose={() => setIsOpen(false)} isOpen={isOpen}>

@@ -22,7 +22,7 @@ export default function Modal({ children, isOpen, handleClose }) {
             <div className={isOpen ? 'modal' : ''}>
                 <CSSTransition
                     in={isOpen}
-                    timeout={{ entry: 0, exit: 400 }}
+                    timeout={{ entry: 1000, exit: 0 }}
                     unmountOnExit
                     className="modal-content"
                     nodeRef={nodeRef}

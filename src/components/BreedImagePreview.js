@@ -15,7 +15,7 @@ export default function BreedImagePreview({ content: { label, breed, subBreed } 
     useEffect(() => {
         //Bug Init twice, happen when modal is use
         getImg(breed, subBreed)
-        console.log("breed::::", breed, subBreed);
+
     }, [breed, subBreed]);
 
     return (
@@ -26,9 +26,9 @@ export default function BreedImagePreview({ content: { label, breed, subBreed } 
                 {error && <p>{error}</p>}
             </div>
             <div className='preview-container__actions'>
-                <a className="button button--white" href="#" role="button" onClick={() => getImg(breed, subBreed)}>
+                <button className="button button--white" onClick={() => getImg(breed, subBreed)}>
                     <span>Next image</span>
-                </a>
+                </button>
             </div>
 
 

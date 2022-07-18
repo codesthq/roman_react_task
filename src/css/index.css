@@ -1,7 +1,7 @@
 @import url("Modal.css");
 @import url("BreedImagePreview.css");
 @import url("Button.css");
-
+@import url("BreedsSorted.css");
 html,
 body {
   height: 100%;
