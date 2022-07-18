@@ -2,7 +2,7 @@
 
 The application uses [DOG-API](https://dog.ceo/dog-api/documentation/) to view dog breeds.
 
-## Description of operation
+## How the application works
 When you run the application for the first time, it retrieves information on all dog breeds available in DOG-API. 
 
 The breeds and sub-breeds are displayed as an alphabetically grouped list.  The dog breed is presented as a button with the breed name as the button label.
