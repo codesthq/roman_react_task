@@ -14,7 +14,6 @@ export default function BreedImagePreview({ content: { label, breed, subBreed } 
 
     useEffect(() => {
         getImg(breed, subBreed)
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
