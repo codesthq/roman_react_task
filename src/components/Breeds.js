@@ -5,11 +5,11 @@ import { capitalizeFirstLetter } from "../utils/textUtils";
 
 export default function Breeds({ onClickBreed }) {
 
-    const getAllBreeds = useApi(getAll);
+    const { data, error, loading, request } = useApi(getAll);
 
     useEffect(() => {
-        getAllBreeds.request();
-    }, []);
+        request();
+    }, [request]);
 
     const allBreedsWithSubBreeds = (breeds) => {
         if (!breeds)
@@ -41,10 +41,10 @@ export default function Breeds({ onClickBreed }) {
 
     return (
         <div>
-            {getAllBreeds.loading && <p>Breeds are loading!</p>}
-            {getAllBreeds.error && <p>{getAllBreeds.error}</p>}
+            {loading && <p>Breeds are loading!</p>}
+            {error && <p>{error}</p>}
 
-            {allBreedsWithSubBreeds(getAllBreeds.data).map((breedItem) => (
+            {allBreedsWithSubBreeds(data).map((breedItem) => (
                 <button className="button button--gray button--effect  margin-10" onClick={() => onClickBreed(breedItem)} key={breedItem.label}><span>{breedItem.label}</span></button>
             ))}
 

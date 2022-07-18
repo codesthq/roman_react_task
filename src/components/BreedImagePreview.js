@@ -6,15 +6,11 @@ import loader from '../img/dog_white_big.png';
 export default function BreedImagePreview({ content: { label, breed, subBreed } = {} }) {
 
     const { data, error, loading, request } = useApi(getSingleRandomImage);
-
-    const getImg = (breed, subBreed) => {
-        const url = breed + (subBreed ? ('/' + subBreed) : '')
-        request(url)
-    }
+    const url = breed + (subBreed ? ('/' + subBreed) : '')
 
     useEffect(() => {
-        getImg(breed, subBreed)
-    }, []);
+        request(url)
+    }, [request, url]);
 
     return (
         <div className='preview-conainer'>
@@ -24,7 +20,7 @@ export default function BreedImagePreview({ content: { label, breed, subBreed } 
                 {error && <p>{error}</p>}
             </div>
             <div className='preview-container__actions'>
-                <button className="button button--white" onClick={() => getImg(breed, subBreed)}>
+                <button className="button button--white" onClick={() => request(url)}>
                     <span>Next image</span>
                 </button>
             </div>
