@@ -14,6 +14,7 @@
   overflow: hidden;
   transition: all 0.2s linear 0s;
   cursor: pointer;
+  border-width: 0px;
   border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 
